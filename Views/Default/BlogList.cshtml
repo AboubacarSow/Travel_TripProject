@@ -1,0 +1,88 @@
+﻿@model List<Travel_TripProject.Models.Blog>
+@{
+    ViewBag.Title = "BlogList";
+    Layout = "~/Views/Shared/_tripLayout.cshtml";
+}
+<style>
+    .cart{
+        box-shadow: 4px -4px 12px rgba(128, 128, 100,0.5);
+        cursor:pointer;   
+    }
+    .title{
+        padding-left:40px;
+    }
+</style>
+
+   <div class="container py-5">
+        <div class="row">
+            <div class="col-lg-8 col-md-12 single-main">
+               @foreach(var blog in Model)
+            {
+                <div class="card my-3 p-1 border-0 cart">
+                    <div style="width:100%">
+                    <img src="@blog.ImageUrl" alt="" style="width:100%" class="rounded-2" />
+                    </div>
+                    <div class="my-2 px-2">
+               
+                        <a href="#" class="btn btn-danger d-inline" >@blog.Title </a>
+                        <p class="text-justify mt-2">
+                            @blog.Description  
+                        </p>
+
+                    </div>
+                </div> 
+               
+
+            }
+            </div>
+
+            <div class="col-lg-4 col-md-12">
+                <div>
+                    <p class="fs-5 fw-semibold title underline">Son Bloglar</p>
+                    <div class="list btn-group">
+                        <ul>
+                            <li><a href="#">Aliquam tincidunt mauris</a></li>
+                            <li><a href="#">Vestibulum auctor dapibus  lipsum</a></li>
+                            <li><a href="#">Nunc dignissim risus consecu</a></li>
+                            <li><a href="#">Cras ornare tristiqu</a></li>
+                        </ul>
+
+                    </div>
+                </div>
+
+                <div>
+                    <p class="fs-5 fw-semibold title underline">Son Yorumlar</p>
+                    <div class="list">
+                        <ul>
+                            <li><a href="#">Amada Doe </a> on <a href="#">Hello World!</a></li>
+                            <li><a href="#">Peter Doe </a> on <a href="#"> Photography</a></li>
+                            <li><a href="#">Steve Roberts  </a> on <a href="#">HTML5/CSS3</a></li>
+                        </ul>
+                    </div>
+
+                </div>
+
+                <div class="categories">
+                    <p class="fs-5 fw-semibold title underline">CATEGORIES</p>
+                    <div class="list">
+                        <ul>
+                            <li><a href="#">Vivamus vestibulum nulla</a></li>
+                            <li><a href="#">Integer vitae libero ac risus e</a></li>
+                            <li><a href="#">Vestibulum commo</a></li>
+                            <li><a href="#">Cras iaculis ultricies</a></li>
+                        </ul>
+
+                    </div>
+                </div>
+
+            </div>
+ 
+
+        </div>
+    </div>
+
+
+
+
+
+
