@@ -22,12 +22,18 @@
                     <div style="width:100%">
                     <img src="@blog.ImageUrl" alt="" style="width:100%" class="rounded-2" />
                     </div>
+                    <p></p>
                     <div class="my-2 px-2">
-               
-                        <a href="#" class="btn btn-danger d-inline" >@blog.Title </a>
+                        <div class="d-flex justify-content-between">
+                        <p  class="text-danger fs-5 fw-lighter " >@blog.Title </p>
+                        <p class="text-secondary align-baseline"><strong class="fw-bold text-primary">Created:</strong>  @blog.CreatedDate.ToShortDateString() <strong class="ms-3 fw-lighter"> @blog.Comments.Count Comments</strong></p>
+                        </div>
                         <p class="text-justify mt-2">
-                            @blog.Description  
+                            @blog.Description.Substring(0,180) . . .  
                         </p>
+                        <a href="/Default/BlogDetails/@blog.BlogId" class="btn btn-outline-primary">
+                        <i class="fa-solid fa-arrow-right"></i>
+                        Daha Fazla Oku</a>
 
                     </div>
                 </div> 

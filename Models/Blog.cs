@@ -12,7 +12,7 @@ namespace Travel_TripProject.Models
         public int BlogId { get; set; } 
         public string Title { get;set; }
         public string Description { get; set; }
-        public DateTime CreatedDate { get; set; } 
+        public DateTime CreatedDate { get; set; } = DateTime.Now;
         public string ImageUrl { get; set; }
         public virtual ICollection<Comment> Comments { get; set; }
     }

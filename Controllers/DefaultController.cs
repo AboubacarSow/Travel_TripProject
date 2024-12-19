@@ -23,5 +23,9 @@ namespace Travel_TripProject.Controllers
         {
             return View(_dbContext.Blogs.ToList());
         }
+        public ActionResult BlogDetails(int id)
+        {
+            return View(_dbContext.Blogs.Find(id));
+        }
     }
 }
