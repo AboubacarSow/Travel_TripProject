@@ -140,6 +140,14 @@
     <Compile Include="Migrations\202412191550019_updateBlogProperty.Designer.cs">
       <DependentUpon>202412191550019_updateBlogProperty.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202412201505508_updateComment.cs" />
+    <Compile Include="Migrations\202412201505508_updateComment.Designer.cs">
+      <DependentUpon>202412201505508_updateComment.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202412201556283_updateWhenCreatedProp.cs" />
+    <Compile Include="Migrations\202412201556283_updateWhenCreatedProp.Designer.cs">
+      <DependentUpon>202412201556283_updateWhenCreatedProp.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\About.cs" />
     <Compile Include="Models\Address.cs" />
@@ -152,6 +160,11 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Assets\ankara.jpg" />
+    <Content Include="Assets\Berlin.jpg" />
+    <Content Include="Assets\Matera.jpg" />
+    <Content Include="Assets\Moscow.jpg" />
+    <Content Include="Assets\Paris.jpg" />
     <Content Include="Assets\trip.jpg" />
     <Content Include="Assets\woman-smiling.jpg" />
     <Content Include="Content\bootstrap-grid.css" />
@@ -266,6 +279,12 @@
     <Content Include="Views\Default\About.cshtml" />
     <Content Include="Views\Default\BlogList.cshtml" />
     <Content Include="Views\Default\BlogDetails.cshtml" />
+    <Content Include="Views\Default\CreateComment.cshtml" />
+    <Content Include="Views\Default\LastBlogs.cshtml" />
+    <Content Include="Views\Default\LastComments.cshtml" />
+    <Content Include="Views\Default\SliderImages.cshtml" />
+    <Content Include="Views\Default\LastBlogHome.cshtml" />
+    <Content Include="Views\Default\TopTenBlog.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -303,6 +322,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202412191550019_updateBlogProperty.resx">
       <DependentUpon>202412191550019_updateBlogProperty.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202412201505508_updateComment.resx">
+      <DependentUpon>202412201505508_updateComment.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202412201556283_updateWhenCreatedProp.resx">
+      <DependentUpon>202412201556283_updateWhenCreatedProp.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

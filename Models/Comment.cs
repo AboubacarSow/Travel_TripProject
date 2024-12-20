@@ -13,7 +13,10 @@ namespace Travel_TripProject.Models
         public string UserName {  get; set; }
         [EmailAddress]
         public string UserEmail { get; set; }
-        public string CommmentBody {  get; set; }   
+        public string CommmentBody {  get; set; }
+
+        public DateTime WhenCommented { get; set; } = DateTime.Now;
+        
         public int BlogId {  get; set; }
         public virtual Blog Blog { get; set; }
     }

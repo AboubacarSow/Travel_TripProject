@@ -1,0 +1,32 @@
+﻿@model List<Travel_TripProject.Models.Blog>
+<style>
+    .des{
+        font-size:15px;
+        padding:0 10px;
+    }
+    .cart{
+        transition: all 1s;
+        cursor:pointer;
+    }
+    .cart:hover{
+        transform: scale(1.05);
+    }
+    .link{
+        text-decoration:none;
+    }
+    .couleur {
+        color:rgb( 160, 52, 88);
+    }
+</style>
+@foreach (var blog in Model)
+{
+    <div class="col-lg-4 col-md-6">
+       <div class="card p-1 cart">
+           <img src="@blog.ImageUrl" style="height:170px" class="rounded-1"/>
+           <p class="fs-5 couleur  text-center">@blog.Title</p>
+           <p class="fw-lighter text-center">@blog.CreatedDate.ToShortDateString()</p>
+           <p class="text-secondary des">@blog.Description.Substring(0,70) ...</p>
+           <a href="/Default/BlogDetails/@blog.BlogId" class="text-center mb-1 link"> <span class="read">Devamını Oku >></span></a>
+       </div>
+    </div>
+}

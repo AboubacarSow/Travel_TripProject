@@ -1,0 +1,21 @@
+﻿@model List<Travel_TripProject.Models.Blog>
+@{ 
+    int count = 0;
+}
+<div>
+    <p class="fs-5 fw-semibold title underline">Son Bloglar</p>
+    <div class="list btn-group">
+        <ul>
+            @foreach(var blog in Model)
+            {
+                count++;
+                <li class="list-bg px-4"><span>@count .  </span><a href="/Default/BlogDetails/@blog.BlogId">@blog.Title</a></li>
+
+            }
+            
+        </ul>
+
+    </div>
+</div>
+
+

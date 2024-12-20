@@ -1,0 +1,16 @@
+﻿@model Travel_TripProject.Models.Comment
+<div class="text-danger">@Html.ValidationSummary()</div>
+<form method="post" action="/Default/CreateComment">
+    <input type="hidden" name="BlogId" value="@ViewBag.BlogId" />
+    <input type="text" name="UserName" placeholder="Adı" required class="form-control my-2" />
+    <input type="email" name="UserEmail" placeholder="Mail" required class="form-control  my-2" />
+    <label class="form-label text-secondary">Yorumuz Giriniz</label>
+    @Html.TextAreaFor(c=>c.CommmentBody, new {@class="form-control my-2"})
+    <button type="submit" class="btn btn-primary my-1">
+        Gönder
+    </button>
+    <a class="btn btn-outline-warning" href="/Default/BlogList">
+        <i class="fa-solid fa-arrow-left"></i>
+        Geri Dön
+    </a>
+</form>

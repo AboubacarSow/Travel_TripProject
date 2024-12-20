@@ -1,0 +1,12 @@
+﻿@model List<string>
+
+<div class="slider">
+    <ul class="rslides" id="slider1">
+        @foreach(var blog in Model)
+            {
+                 <li><img src="@blog" alt="" style="height:400px"></li>
+
+            }
+       
+    </ul>
+</div>
