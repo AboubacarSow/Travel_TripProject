@@ -42,7 +42,7 @@
                     <th>@count</th>
                     <td>@blog.Title</td>
                     <td>
-                        <button type="button" class="btn btn-info" data-bs-toggle="modal" 
+                        <button type="button" class="btn btn-info text-light" data-bs-toggle="modal" 
                                data-bs-target="#message-@blog.BlogId">
                             Açıklamasını Görüntüle
                         </button>
@@ -56,6 +56,7 @@
             }
         </tbody>
     </table>
+    <a href="/Blog/Create" class="btn btn-outline-primary">Yeni Blog Ekle</a>
 </div>
 @foreach(var b in Model)
  {

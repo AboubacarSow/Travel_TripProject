@@ -1,0 +1,35 @@
+﻿@model Travel_TripProject.Models.Blog
+@{
+    ViewBag.Title = "Update";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<style>
+    .entete {
+        width: 100%;
+        height: 50px;
+        background: rgb(241, 241, 241);
+        border-radius: 5px;
+        padding-left: 20px;
+    }
+</style>
+
+<div class="container py-2 px-5">
+    <div class="entete my-4">
+        <p class="fs-4 fw-bolder text-info mt-2">Blog Güncelleme</p>
+    </div>
+    <form method="post">
+        <div>
+            <label class="form-label">Başlık</label>
+            @Html.TextBoxFor(b => b.Title, new { @class = "form-control mb-3" })
+            <label class="form-label">Açıklama</label>
+            @Html.TextAreaFor(b => b.Description, new { @class = "form-control mb-3" })
+            <label class="form-label">Resim Seçiniz</label>
+            <input type="file" name="ImageUrl" value="@Model.ImageUrl" class="form-control mb-3" />
+        </div>
+        <button type="submit" class="btn btn-success"> Güncelle</button>
+    </form>
+
+</div>
+
+
