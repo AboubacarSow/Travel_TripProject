@@ -79,14 +79,22 @@ namespace Travel_TripProject.Controllers
         public PartialViewResult TopTenBlog()
         {
  
-           var blog=_dbContext.Blogs.OrderByDescending(c=>c.Comments.Count).ToList();
-            if (blog.Count >= 11)
-            {
-                blog=blog.Take(10).ToList();    
-            }
-            return PartialView(blog);
+            return PartialView(GetTopBlogs(10));
         }
-      
-        
+        public PartialViewResult TopSixBlog()
+        {
+            return PartialView(GetLastBlogs(6));
+        }
+        private List<Blog> GetTopBlogs(int count)
+        {
+            var blog = _dbContext.Blogs.OrderByDescending(c => c.Comments.Count).ToList();
+            if (blog.Count >= count)
+            {
+                blog = blog.Take(count).ToList();
+            }
+
+            return blog;
+        }
+
     }
 }
