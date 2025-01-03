@@ -151,6 +151,10 @@
     <Compile Include="Migrations\202412201556283_updateWhenCreatedProp.Designer.cs">
       <DependentUpon>202412201556283_updateWhenCreatedProp.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202501032002451_update_Comment.cs" />
+    <Compile Include="Migrations\202501032002451_update_Comment.Designer.cs">
+      <DependentUpon>202501032002451_update_Comment.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\About.cs" />
     <Compile Include="Models\Address.cs" />
@@ -295,6 +299,7 @@
     <Content Include="Views\Contact\Index.cshtml" />
     <Content Include="Views\Blog\Create.cshtml" />
     <Content Include="Views\Blog\Update.cshtml" />
+    <Content Include="Views\Default\Contact.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -338,6 +343,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202412201556283_updateWhenCreatedProp.resx">
       <DependentUpon>202412201556283_updateWhenCreatedProp.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202501032002451_update_Comment.resx">
+      <DependentUpon>202501032002451_update_Comment.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

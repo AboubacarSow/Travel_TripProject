@@ -16,8 +16,8 @@ namespace Travel_TripProject.Models
         public DateTime CreatedDate { get; set; } = DateTime.Now;
         public string ImageUrl { get; set; }
         public virtual ICollection<Comment> Comments { get; set; }
-
         [NotMapped]
         public HttpPostedFileBase ImageFile { get; set; }
+     
     }
 }

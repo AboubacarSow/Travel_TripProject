@@ -15,6 +15,10 @@ namespace Travel_TripProject.Controllers
         {
             return View();
         }
+        public ActionResult Contact()
+        {
+            return View();
+        }
         public ActionResult About()
         {
             return View(_dbContext.Abouts.ToList());

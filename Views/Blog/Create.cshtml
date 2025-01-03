@@ -17,15 +17,15 @@
     <div class="entete my-4">
         <p class="fs-4 fw-bolder text-info">Blog Oluşturma</p>
     </div>
-    <form method="post">
-
+    <div class="text-danger">@Html.ValidationSummary()</div>
+    <form method="post" enctype="multipart/form-data">
         <div>
             <label class="form-label">Başlık</label>
             @Html.TextBoxFor(b => b.Title, new { @class = "form-control mb-3" })
             <label class="form-label">Açıklama</label>
             @Html.TextAreaFor(b => b.Description,new { @class = "form-control mb-3" })
             <label class="form-label">Resim Seçiniz</label>
-            <input type="file" name="ImageUrl" class="form-control mb-3" />
+            <input type="file" name="ImageFile" class="form-control mb-3" />
         </div>
         <button  type="submit" class="btn btn-success"> Ekleyiniz</button>
     </form>

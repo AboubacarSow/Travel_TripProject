@@ -14,6 +14,7 @@ namespace Travel_TripProject.Models
         [EmailAddress]
         public string UserEmail { get; set; }
         public string CommmentBody {  get; set; }
+        public bool IsRead { get; set; } = false;
 
         public DateTime WhenCommented { get; set; } = DateTime.Now;
         
