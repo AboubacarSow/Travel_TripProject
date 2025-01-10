@@ -127,6 +127,7 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\AddressController.cs" />
     <Compile Include="Controllers\BlogController.cs" />
     <Compile Include="Controllers\ContactController.cs" />
     <Compile Include="Controllers\DefaultController.cs" />
@@ -154,6 +155,10 @@
     <Compile Include="Migrations\202501032002451_update_Comment.cs" />
     <Compile Include="Migrations\202501032002451_update_Comment.Designer.cs">
       <DependentUpon>202501032002451_update_Comment.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202501101941270_updateContact.cs" />
+    <Compile Include="Migrations\202501101941270_updateContact.Designer.cs">
+      <DependentUpon>202501101941270_updateContact.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\About.cs" />
@@ -300,9 +305,12 @@
     <Content Include="Views\Blog\Create.cshtml" />
     <Content Include="Views\Blog\Update.cshtml" />
     <Content Include="Views\Default\Contact.cshtml" />
+    <Content Include="Views\Default\SendMessage.cshtml" />
+    <Content Include="Views\Default\Addresses.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Views\Address\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\bootstrap.rtl.min.css.map" />
@@ -346,6 +354,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202501032002451_update_Comment.resx">
       <DependentUpon>202501032002451_update_Comment.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202501101941270_updateContact.resx">
+      <DependentUpon>202501101941270_updateContact.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

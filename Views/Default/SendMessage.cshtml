@@ -1,0 +1,23 @@
+﻿@model Travel_TripProject.Models.Contact
+
+<div class="form">
+    <form class="cmxform" id="contactForm" method="post">
+        <div>
+            <input type="text" name="FullName" class="textbox" value="Tam Adınız:" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Tam Adınız';}">
+        </div>
+        <div>
+            <input type="text" name="EMail" class="textbox" value="Mail Adresiniz:" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Mail Adresiniz';}">
+        </div>
+        <div>
+            <input type="text" class="textbox" name="Subject" value="Konu:" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Konu';}">
+        </div>
+        <div class="form1 flex-grow-1">
+            <div>
+                <textarea value="Mesajınızı:" name="MessageBody" this.value = '';" onblur="if (this.value == '') {this.value = 'Mesajınızı';}"></textarea>
+            </div>
+        </div>
+        <div>
+           <button type="submit" class="read">Gönder</button>
+        </div>
+    </form>
+</div>

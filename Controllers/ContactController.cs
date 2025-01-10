@@ -13,12 +13,18 @@ namespace Travel_TripProject.Controllers
         // GET: Contact
         public ActionResult Index()
         {
-            return View();
+            return View(_context.Contacts.ToList());
         }
         public ActionResult Delete(int id)
         {
             _context.Contacts.Remove(_context.Contacts.Find(id));
             _context.SaveChanges(); 
+            return RedirectToAction("Index");
+        }
+        public ActionResult SetAsRead(int id)
+        {
+            var value=_context.Contacts.Find(id);
+            value.IsRead = true;    
             return RedirectToAction("Index");
         }
 

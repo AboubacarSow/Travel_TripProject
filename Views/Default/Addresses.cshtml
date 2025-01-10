@@ -1,0 +1,23 @@
+﻿@model List<Travel_TripProject.Models.Address>
+<div class="contact-bottom">
+    
+
+        @foreach (var add in Model)
+        {
+            <div class="contact-left">
+
+                <div class="contact-add">
+                    <h3>@add.Title</h3>
+                    <p> @add.Description</p>
+                    <p>Telephone:@add.PhoneNumber</p>
+                    <p>Email:<a href="mailto:@add.Email">@add.Email</a></p>
+                </div>
+            </div>
+            <div class="contact-map">
+                    <iframe src="@add.Localisation" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+            <div class="clear"></div>
+          }
+
+
+</div>

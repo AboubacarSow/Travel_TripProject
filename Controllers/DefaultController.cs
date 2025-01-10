@@ -19,6 +19,22 @@ namespace Travel_TripProject.Controllers
         {
             return View();
         }
+        [HttpGet]
+        public PartialViewResult SendMessage()
+        {
+            return PartialView();
+        } 
+        [HttpPost]
+        public PartialViewResult SendMessage(Contact contact)
+        {
+            _dbContext.Contacts.Add(contact);
+            _dbContext.SaveChanges();
+            return PartialView();
+        }
+        public PartialViewResult Addresses()
+        {
+            return PartialView(_dbContext.Addresses.ToList());
+        }
         public ActionResult About()
         {
             return View(_dbContext.Abouts.ToList());

@@ -15,5 +15,6 @@ namespace Travel_TripProject.Models
         [EmailAddress]
         public string EMail { get; set; }   
         public string MessageBody { get; set; } 
+        public bool IsRead {  get; set; }=false;
     }
 }

@@ -1,7 +1,8 @@
-﻿
+﻿@model List<Travel_TripProject.Models.Contact>
 @{
     ViewBag.Title = "Index";
     Layout = "~/Views/Shared/_AdminLayout.cshtml";
+    int count = 0;
 }
 
 <style>
@@ -20,5 +21,70 @@
     <div class="entete my-4">
         <p class="fs-4 fw-bolder text-info"> <i class="fa-solid fa-phone me-2"></i>İletişim Paneli</p>
     </div>
+    <table class="table table-bordered table-hover rounded-2">
+        <thead>
+            <tr>
+                <th>No.</th>
+                <th>Gönderen</th>
+                <th>Adres Maili</th>
+                <th>Konu</th>
+                <th>Mesaj İçeriği</th>
+                <th>Durum</th>
+                <th>Sil</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var con in Model)
+            {
+                count++;
+                <tr>
+                    <td>@count</td>
+                    <td>@con.FullName</td>
+                    <td class="text-italic">@con.EMail</td>
+                    <td>@con.Subject</td>
+                    <td class="text-center">
+                        <button type="button" class="btn btn-info text-light" data-bs-toggle="modal"
+                                data-bs-target="#message-@con.ContactId">
+                            <i class="fa-solid fa-book-open"></i>
+                        </button>
+                    </td>
+                    <td>
+                        @if (!con.IsRead)
+                         { 
+
+                            <a href="/Contact/SetAsRead/@con.ContactId" class="btn btn-info text-light">Okundu İşaretle</a>
+                         }
+                        else
+                         {
+                            <span class="btn btn-warning"><i class="fa-solid fa-envelope-open-text"></i> Okunmuştur</span>
+                         }
+                    </td>
+
+              
+                    <td><a href="/Contact/Delete/@con.ContactId" class="btn btn-danger"><i class="fa fa-trash"></i>Sil</a></td>
+                </tr>
+            }
+        </tbody>
+    </table>
 </div>
+@foreach (var b in Model)
+{
+    <div class="modal fade" id="message-@b.ContactId" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="staticBackdropLabel">Mesajı</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Kapat"></button>
+                </div>
+                <div class="modal-body">
+                    @b.MessageBody
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Kapat</button>
+                    <a href="/Contact/SetAsRead/@b.ContactId" class="btn btn-success">Okundu İşaretle</a>
+                </div>
+            </div>
+        </div>
+    </div>
+}
 
