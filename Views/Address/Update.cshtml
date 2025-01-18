@@ -1,0 +1,40 @@
+﻿@model Travel_TripProject.Models.Address
+@{
+    ViewBag.Title = "Update";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<style>
+    .entete {
+        width: 100%;
+        height: 50px;
+        background: rgb(241, 241, 241);
+        border-radius: 5px;
+        display: flex;
+        align-items: center;
+        padding-left: 20px;
+    }
+</style>
+
+<div class="container py-2">
+    <div class="entete my-4">
+        <p class="fs-4 fw-bolder text-info"><i class="fa fa-plus me-2"></i>Adres Ekleme</p>
+    </div>
+    <form method="post">
+        <div class="text-danger">@Html.ValidationSummary()</div>
+        <input type="hidden" name="AddressId" value="@Model.AddressId" />
+        <label class="form-label ">Başlık</label>
+        @Html.TextBoxFor(a => a.Title, new { @class = "form-control mb-2" })
+        <label class="form-label ">Açıklama</label>
+        @Html.TextBoxFor(a => a.Description, new { @class = "form-control mb-2 " })
+        <label class="form-label">Telefon Numara</label>
+        @Html.TextBoxFor(a => a.PhoneNumber, new { @class = "form-control mb-2" })
+        <label class="form-label">Maıl Adresi</label>
+        @Html.TextBoxFor(a => a.Email, new { @class = "form-control mb-2" })
+        <label class="form-label">Konu</label>
+        @Html.TextBoxFor(a => a.Localisation, new { @class = "form-control mb-2" })
+
+        <button class="btn btn-success text-white my-2"><i class="fa fa-edit me-2"></i>Güncelle</button>
+    </form>
+</div>
+

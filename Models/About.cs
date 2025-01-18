@@ -12,5 +12,6 @@ namespace Travel_TripProject.Models
         public int AboutId {  get; set; }    
         public string Description { get; set; }
         public string ImageUrl { get; set; }
+        
     }
 }

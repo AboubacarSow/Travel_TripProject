@@ -1,0 +1,53 @@
+﻿@model List<Travel_TripProject.Models.Address>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+    int count = 0;
+}
+<style>
+    .entete {
+        width: 100%;
+        height: 50px;
+        background: rgb(241, 241, 241);
+        border-radius: 5px;
+        display: flex;
+        align-items: center;
+        padding-left: 20px;
+    }
+</style>
+
+<div class="container py-2">
+    <div class="entete my-4">
+        <p class="fs-4 fw-bolder text-info"><i class="fa-solid fa-map-location-dot me-2"></i>Adreslerim Paneli</p>
+    </div>
+    <table class="table table-bordered table-hover rounded-2">
+        <thead>
+            <tr>
+                <td>No.</td>
+                <td>Başlık</td>
+                <td>Açıklama</td>
+                <td>Telefon Numara</td>
+                <td>Mail</td>
+                <td>Sil</td>
+                <td>Güncelle</td>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach(var item in Model)
+            {
+                count++;
+                <tr>
+                    <td>@count</td>
+                    <td>@item.Title</td>
+                    <td>@item.Description</td>
+                    <td>@item.PhoneNumber</td>
+                    <td>@item.Email</td>
+                    <td><a href="/Address/Delete/@item.AddressId" class="btn btn-danger"><i class="fa fa-trash me-2"></i> Sil</a></td>
+                    <td><a href="/Address/Update/@item.AddressId" class="btn btn-success"><i class="fa fa-edit me-2"></i> Güncelle</a></td>
+                </tr>
+            }
+        </tbody>
+    </table>
+    <a href="/Address/Create" class="btn btn-outline-info"> <i class="fa fa-plus"></i>Yeni Adres Ekle</a>
+</div>
+
